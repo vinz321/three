@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from '../three';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls.js';
 
 let scene, camera, renderer, controls;
