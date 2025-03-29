@@ -3,6 +3,7 @@
     "three": "^0.166.1"
   },
   "devDependencies": {
+    "cannon-es": "^0.20.0",
     "vite": "^5.3.3"
   }
 }

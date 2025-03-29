@@ -22,7 +22,37 @@
     </style>
 </head>
 <body>
+    <script>
+        let current_game_id=0;
+        let current_game_path='';
+
+        let games=[
+            './src/index.js',
+            ''
+        ];   
+        
+        function changeGame(){
+            current_game_id++;
+            current_game_id%=games.length;
+            current_game_path=games[current_game_id];
+            parent= document.getElementById('gameScript').parentNode;
+            document.getElementById('gameScript').remove();
+            script_element = document.createElement('script');
+            script_element.type = 'module';
+            script_element.src = current_game_path + '?t=' + new Date().getTime(); // Append a timestamp to force reload
+            script_element.id = 'gameScript';
+            parent.appendChild(script_element);
+            if(document.getElementById('canvas')){
+                document.getElementById('canvas').remove();
+            }
+            console.log("Game Changed to: " + current_game_path);
+        }
+
+    </script>
+    <h1 style="font-family: Arial, Helvetica, sans-serif; color: black; font-weight: bold; text-transform: uppercase;">Test Game</h1>
+    <button onclick="changeGame()" style="margin: 1%;">Change</button>
+    
     <div id="instructions">Click to Play</div>
-    <script type="module" src="./src/index.js"></script>
+    <script type="module" src="./src/index.js" id="gameScript"></script>
 </body>
 </html>
