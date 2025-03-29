@@ -22,6 +22,15 @@
     </style>
 </head>
 <body>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/",
+            "cannon": "https://cdn.jsdelivr.net/npm/cannon-es@<version>/dist/cannon-es.js",
+          }
+        }
+        </script>
     <script>
         let current_game_id=0;
         let current_game_path='';
